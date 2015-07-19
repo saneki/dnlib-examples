@@ -4,7 +4,8 @@
 	{
 		static void Main(string[] args)
 		{
-			GenericExample1.Run();
+			//GenericExample1.Run();
+			GenericExample2.Run();
 		}
 	}
 }
