@@ -90,9 +90,6 @@ namespace dnlib.MoreExamples
 							MethodSig.CreateStatic(mod.CorLibTypes.Void, mod.CorLibTypes.String,
 								mod.CorLibTypes.Object),
 							systemConsole);
-			var writeLine1 = new MemberRefUser(mod, "WriteLine",
-							MethodSig.CreateStatic(mod.CorLibTypes.Void, mod.CorLibTypes.String),
-							systemConsole);
 
 			//
 			// Method 1: Create List<String> inst signature by importing (easy way)
@@ -119,10 +116,6 @@ namespace dnlib.MoreExamples
 			// (GenericMVar would be used for method generic argument, such as Add<!!0>(!!0))
 			var listAdd = new MemberRefUser(mod, "Add",
 				MethodSig.CreateInstance(mod.CorLibTypes.Void, new GenericVar(0)),
-				listTypeSpec);
-
-			var listToArray = new MemberRefUser(mod, "ToArray",
-				MethodSig.CreateInstance(new SZArraySig(new GenericVar(0))),
 				listTypeSpec);
 
 			var listGetCount = new MemberRefUser(mod, "get_Count",
