@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="GenericExample1.cs" />
     <Compile Include="GenericExample2.cs" />
+    <Compile Include="GenericExample3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
