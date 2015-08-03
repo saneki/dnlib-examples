@@ -34,7 +34,7 @@ namespace My.Namespace
 
 peverify output:
 
-	C:\> peverify generic-smethod-test.exe /IL /MD
+	C:\> peverify GenericExample2.exe /IL /MD
 
 	Microsoft (R) .NET Framework PE Verifier.  Version  4.0.30319.33440
 	Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -44,7 +44,7 @@ peverify output:
 
 Output of program:
 
-	C:\>generic-smethod-test.exe
+	C:\> GenericExample2.exe
 	Count: 2
 
 */
@@ -56,15 +56,15 @@ namespace dnlib.MoreExamples
 		public static void Run()
 		{
 			// This is the file that will be created
-			string newFileName = @"generic-smethod-test.exe";
+			string newFileName = @"GenericExample2.exe";
 
 			// Create the module
-			var mod = new ModuleDefUser("generic-smethod-test", Guid.NewGuid(),
+			var mod = new ModuleDefUser("GenericExample2", Guid.NewGuid(),
 				new AssemblyRefUser(new AssemblyNameInfo(typeof(int).Assembly.GetName().FullName)));
 			// It's a console app
 			mod.Kind = ModuleKind.Console;
 			// Create the assembly and add the created module to it
-			new AssemblyDefUser("generic-smethod-test", new Version(1, 2, 3, 4)).Modules.Add(mod);
+			new AssemblyDefUser("GenericExample2", new Version(1, 2, 3, 4)).Modules.Add(mod);
 
 			// Add the startup type. It derives from System.Object.
 			TypeDef startUpType = new TypeDefUser("My.Namespace", "Startup", mod.CorLibTypes.Object.TypeDefOrRef);
